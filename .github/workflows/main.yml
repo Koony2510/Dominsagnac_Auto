@@ -2,7 +2,7 @@ name: Automatic Script Execution
 
 on:
   schedule:
-    - cron: '52 17 * * *'  # 매일 자정에 실행
+    - cron: '15 18 * * *'  # 매일 자정에 실행
 
 jobs:
   run_script:
