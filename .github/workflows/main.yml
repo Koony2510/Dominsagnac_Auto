@@ -2,7 +2,7 @@ name: Automatic Script Execution
 
 on:
   schedule:
-    - cron: '51 13 * * *'  # 매일 자정에 실행
+    - cron: '32 13 * * *'  # 매일 자정에 실행
 
 jobs:
   run_script:
@@ -19,12 +19,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd path/to/your/project
           pip install -r requirements.txt
           
       - name: Execute Automation Script
         run: |
-          cd path/to/your/project
           python automation_script.py > output.txt
 
       - name: Read Output and Create GitHub Issue
@@ -34,5 +32,4 @@ jobs:
 
       - name: Cleanup
         run: |
-          cd path/to/your/project
           rm output.txt
