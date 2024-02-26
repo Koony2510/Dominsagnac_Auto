@@ -2,7 +2,7 @@ name: Automatic Script Execution
 
 on:
   schedule:
-    - cron: '56 10 * * *'  # 매일 자정에 실행
+    - cron: '25 11 * * *'  # 매일 자정에 실행
 
 jobs:
   run_script:
@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
           python-version: '3.8'
 
