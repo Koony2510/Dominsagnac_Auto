@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 chrome_options = webdriver.ChromeOptions()
 
 # 현재 사용 중인 Chrome 브라우저 버전 입력
-chrome_version = "121.0.6167"
+chrome_version = "96.0.4664.110"
 
 # Chrome 드라이버 설정
 driver = webdriver.Chrome(service=Service(ChromeDriverManager(version=chrome_version).install()), options=chrome_options)
