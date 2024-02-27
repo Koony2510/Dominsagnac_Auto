@@ -6,34 +6,31 @@ from selenium.webdriver.common.by import By
 # Chrome 옵션 설정
 chrome_options = webdriver.ChromeOptions()
 
-# 현재 사용 중인 Chrome 브라우저 버전 입력
-chrome_version = "96.0.4664.110"
-
 # Chrome 드라이버 설정
-driver = webdriver.Chrome(service=Service(ChromeDriverManager(version=chrome_version).install()), options=chrome_options)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 # 사이트 접속
 driver.get("https://www.betman.co.kr/")
 
 # 게임 구매 클릭
 xpath_game_purchase = "//a[@class='lv-3-menu' and text()='게임구매']"
-driver.find_element("xpath", xpath_game_purchase).click()
+driver.find_element(By.XPATH, xpath_game_purchase).click()
 
 # 적중 결과 클릭
 xpath_win_result = "//a[@href=\"javascript:movePage('201010400', '/main/mainPage/gamebuy/winrstList.do');\"]"
-driver.find_element("xpath", xpath_win_result).click()
+driver.find_element(By.XPATH, xpath_win_result).click()
 
 # 게임종류 선택
 xpath_game_type = "//select[@class='selectMenu' and @title='게임종류 선택']/option[text()='-축구토토 승무패']"
-driver.find_element("xpath", xpath_game_type).click()
+driver.find_element(By.XPATH, xpath_game_type).click()
 
 # 검색 버튼 클릭
 xpath_search_button = "//button[@id='btn_sch']"
-driver.find_element("xpath", xpath_search_button).click()
+driver.find_element(By.XPATH, xpath_search_button).click()
 
 # 최상단 회차 클릭
 latest_round_xpath = "//tbody/tr[1]/td[1]/a"
-driver.find_element("xpath", latest_round_xpath).click()
+driver.find_element(By.XPATH, latest_round_xpath).click()
 
 # 환급내역 표의 부분을 선택
 refund_table = driver.find_element(By.XPATH, "//div[@class='contTitle lybox' and h4='환급내역']/following-sibling::div[@class='tblArea noPadd']//table[@class='tbl tblAuto']")
