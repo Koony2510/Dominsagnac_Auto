@@ -6,8 +6,12 @@ from selenium.webdriver.common.by import By
 # Chrome 옵션 설정
 chrome_options = webdriver.ChromeOptions()
 
+# 특정 버전의 ChromeDriver 설치
+chrome_version = "121.0.6167.184"
+chrome_driver_path = ChromeDriverManager(version=chrome_version).install()
+
 # Chrome 드라이버 설정
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+driver = webdriver.Chrome(service=Service(chrome_driver_path), options=chrome_options)
 
 # 사이트 접속
 driver.get("https://www.betman.co.kr/")
