@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 chrome_options = webdriver.ChromeOptions()
 
 # 특정 버전의 ChromeDriver 설치
-chrome_version = "121.0.6167.184"
+chrome_version = "114.0.5735.90"
 chrome_driver_path = ChromeDriverManager(version=chrome_version).install()
 
 # Chrome 드라이버 설정
