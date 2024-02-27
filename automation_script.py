@@ -10,6 +10,9 @@ chrome_options = webdriver.ChromeOptions()
 chrome_version = "114.0.5735.90"
 chrome_driver_path = ChromeDriverManager(version=chrome_version).install()
 
+# Chrome 브라우저 위치 명시적으로 지정
+chrome_options.binary_location = "/usr/bin/google-chrome"
+
 # Chrome 드라이버 설정
 driver = webdriver.Chrome(service=Service(chrome_driver_path), options=chrome_options)
 
