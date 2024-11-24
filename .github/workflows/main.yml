@@ -1,10 +1,9 @@
 name: Automatic Script Execution
 
-# 워크플로우 실행 조건 추가
 on:
-  push: # 브랜치에 푸시할 때 실행
+  push:
     branches:
-      - main  # main 브랜치에 푸시될 때 실행
+      - main
 
 jobs:
   run_script:
@@ -23,8 +22,10 @@ jobs:
         run: |
           pip install -r requirements.txt
           
-      - name: Setup Chromedriver
-        uses: nanasess/setup-chromedriver@v2.0.0    
+      - name: Install Chromedriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-chromedriver
 
       - name: Execute Automation Script
         run: |
